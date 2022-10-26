@@ -3,15 +3,15 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Foo\CreateRequest;
-use App\Http\Requests\Foo\UpdateRequest;
-use App\Mappers\FooMapper;
-use App\Models\Foo;
+use App\Http\Requests\{{ name }}\CreateRequest;
+use App\Http\Requests\{{ name }}\UpdateRequest;
+use App\Mappers\{{ name }}Mapper;
+use App\Models\{{ name }};
 use App\Services\Mapper\Facades\Mapper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class DummyController extends Controller
+class {{ name }} extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -29,10 +29,10 @@ class DummyController extends Controller
             $conditions .= " AND LOWER(name) LIKE '%$search_term%'";
         }
         try {
-            $paged = Foo::whereRaw($conditions)
+            $paged = {{ name }}::whereRaw($conditions)
                 ->orderBy($sort, $order)
                 ->paginate($limit);
-            return Mapper::list(new FooMapper(), $paged, Foo::count(), $request->method());
+            return Mapper::list(new {{ name }}Mapper(), $paged, {{ name }}::count(), $request->method());
         } catch (\Exception $e) {
             return Mapper::error($e->getMessage(), $request->method());
         }
@@ -49,11 +49,11 @@ class DummyController extends Controller
     {
         DB::beginTransaction();
         try {
-            $item = Foo::create([
+            $item = {{ name }}::create([
                 'foo' => $request->bar,
             ]);
             DB::commit();
-            return Mapper::single(new FooMapper(), $item, $request->method());
+            return Mapper::single(new {{ name }}Mapper(), $item, $request->method());
         } catch (\Exception $e) {
             DB::rollback();
             return Mapper::error($e->getMessage(), $request->method());
@@ -69,8 +69,8 @@ class DummyController extends Controller
     public function show($id, Request $request)
     {
         try {
-            $item = Foo::findOrFail($id);
-            return Mapper::single(new FooMapper(), $item, $request->method());
+            $item = {{ name }}::findOrFail($id);
+            return Mapper::single(new {{ name }}Mapper(), $item, $request->method());
         } catch (\Exception $e) {
             return Mapper::error($e->getMessage(), $request->method());
         }
@@ -88,12 +88,12 @@ class DummyController extends Controller
     {
         DB::beginTransaction();
         try {
-            $item = Foo::findOrFail($id);
+            $item = {{ name }}::findOrFail($id);
             $item->update([
-                'foo' => $request->bar,
+                '{{ name }}' => $request->bar,
             ]);
             DB::commit();
-            return Mapper::single(new FooMapper(), $item, $request->method());
+            return Mapper::single(new {{ name }}Mapper(), $item, $request->method());
         } catch (\Exception $e) {
             DB::rollback();
             return Mapper::error($e->getMessage(), $request->method());
@@ -112,7 +112,7 @@ class DummyController extends Controller
     {
         DB::beginTransaction();
         try {
-            $item = Foo::findOrFail($id);
+            $item = {{ name }}::findOrFail($id);
             $item->delete();
             DB::commit();
             return Mapper::success($request->method());
