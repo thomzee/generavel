@@ -48,6 +48,7 @@ class GenerateController extends GeneratorCommand
 
     protected function replaceController($stub, $name)
     {
+        $name = preg_replace('/Controller$/', '', $name);
         $replace = [
             '{{ name }}' => $name,
         ];
