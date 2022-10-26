@@ -46,14 +46,20 @@ class GenerateController extends GeneratorCommand
         return $rootNamespace . '\Http\Controllers\Api';
     }
 
-    /**
-     * @param string $stub
-     * @param string $name
-     * @return mixed|string
-     */
-    protected function replaceClass($stub, $name)
+    protected function replaceController($stub, $name)
     {
-        $stub = parent::replaceClass($stub, $name);
-        return str_replace('DummyController', $this->argument('name'), $stub);
+        $replace = [
+            '{{ name }}' => $name,
+        ];
+        return str_replace(
+            array_keys($replace), array_values($replace), $stub
+        );
+    }
+
+    protected function buildClass($name)
+    {
+        $stub = parent::buildClass($name);
+        $clazz = $this->argument('name');
+        return $this->replaceController($stub, $clazz);
     }
 }
