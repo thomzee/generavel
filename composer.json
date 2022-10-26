@@ -1,0 +1,23 @@
+{
+    "name": "thomzee/generavel",
+    "description": "Laravel API Crud Generator",
+    "type": "package",
+    "require": {
+        "illuminate/console": "5.x|6.x|7.x|8.x"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thomas Andrianto",
+            "email": "thomaskayu@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Thomzee\\Generavel\\GeneravelServiceProvider"
+            ]
+        }
+    }
+}
