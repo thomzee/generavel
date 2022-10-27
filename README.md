@@ -39,19 +39,14 @@ Make sure Generavel commands is registered by running this command
 ```$xslt
 php artisan list
 ```
-
-then generate a mapper file with artisan command, example:
-```$xslt
-php artisan make:mapper UserMapper
-```
 these are commands you can try
 ```$xslt
-php artisan generavel:all
-php artisan generavel:model
-php artisan generavel:controller
-php artisan generavel:mapper
-php artisan generavel:create-request
-php artisan generavel:update-request
+php artisan generavel:all Flight
+php artisan generavel:model Flight
+php artisan generavel:controller FlightController
+php artisan generavel:mapper FlightMapper
+php artisan generavel:create-request Flight
+php artisan generavel:update-request Flight
 ```
 then simply adjust your model, controller, and form request.
 
