@@ -13,6 +13,11 @@
         }
     ],
     "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Thomzee\\Generavel\\": "src/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
