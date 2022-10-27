@@ -9,7 +9,7 @@ Go into your project root folder laravel
 ```$xslt
 cd YOUR_LARAVEL_ROOT_PROJECT/
 ``` 
-then get the latest version of Laramap on your project with following command.
+then get the latest version of Generavel on your project with following command.
 ```$xslt
 composer require thomzee/generavel
 ```
@@ -18,7 +18,7 @@ Alternatively, you can update your composer.json file, just like code below
 ```$xslt
 "require": {
     . . .
-    "thomzee/laramap": "dev-master"
+    "thomzee/generavel": "dev-master"
 },
 ```
 b. then run `composer install` command.
@@ -27,14 +27,14 @@ Firstly you need register the service provider your project configuration file `
 ```$xslt
 'providers' => [
     . . .
-    Thomzee\Laramap\GeneravelServiceProvider::class,
+    Thomzee\Generavel\GeneravelServiceProvider::class,
 ]
 ```
 and the facade as well in same file.
 ```$xslt
 'aliases' => [
     . . .
-    'Laramap' => Thomzee\Laramap\Facades\Genervel::class,
+    'Generavel' => Thomzee\Generavel\Facades\Genervel::class,
 ]
 ```
 Run `composer dump-autoload` command to update changes in your project configuration file.
