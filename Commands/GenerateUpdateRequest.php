@@ -34,7 +34,7 @@ class GenerateUpdateRequest extends GeneratorCommand
      */
     protected function getStub()
     {
-        return app_path() . '/Services/Generavel/Commands/Stubs/update_request.stub';
+        return 'vendor/thomzee/generavel/src/Commands/Stubs/update_request.stub';
     }
 
     /**

@@ -34,7 +34,7 @@ class GenerateMapper extends GeneratorCommand
      */
     protected function getStub()
     {
-        return app_path() . '/Services/Generavel/Commands/Stubs/mapper.stub';
+        return 'vendor/thomzee/generavel/src/Commands/Stubs/mapper.stub';
     }
 
     /**
