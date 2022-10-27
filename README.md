@@ -18,7 +18,7 @@ Alternatively, you can update your composer.json file, just like code below
 ```$xslt
 "require": {
     . . .
-    "thomzee/generavel": "dev-master"
+    "thomzee/generavel": "1.*"
 },
 ```
 b. then run `composer install` command.
