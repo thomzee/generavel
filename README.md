@@ -30,13 +30,6 @@ Firstly you need register the service provider your project configuration file `
     Thomzee\Generavel\GeneravelServiceProvider::class,
 ]
 ```
-and the facade as well in same file.
-```$xslt
-'aliases' => [
-    . . .
-    'Generavel' => Thomzee\Generavel\Facades\Genervel::class,
-]
-```
 Run `composer dump-autoload` command to update changes in your project configuration file.
 ```$xslt
 composer dump-autoload
