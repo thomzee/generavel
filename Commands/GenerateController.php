@@ -34,7 +34,7 @@ class GenerateController extends GeneratorCommand
      */
     protected function getStub()
     {
-        return app_path() . '/Services/Generavel/Commands/Stubs/controller.stub';
+        return 'vendor/thomzee/generavel/src/Commands/Stubs/controller.stub';
     }
 
     /**

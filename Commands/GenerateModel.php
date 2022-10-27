@@ -34,7 +34,7 @@ class GenerateModel extends GeneratorCommand
      */
     protected function getStub()
     {
-        return app_path() . '/Services/Generavel/Commands/Stubs/model.stub';
+        return 'vendor/thomzee/generavel/src/Commands/Stubs/model.stub';
     }
 
     /**
